@@ -21,6 +21,9 @@
                   <div class="input-field col s6">
                   <a href="pdf"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
                   </div>
+                  <div class="input-field col s6">
+                  <a href="pdf"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">add_to_photos</i>Imprimir</a>
+                  </div>
               </div>
             </div>
             <div class="row">
