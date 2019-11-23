@@ -14,6 +14,17 @@
                   <li class="tab col s12"><a  class="active" href="#activas">Activos</a></li>
                   
                 </ul>
+                <div class="input-field col s6">
+                  <a href="pdf_clasificacionbien"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
+                  </div>
+
+                  <div class="input-field col s6">
+                  <a href="Excelclasificacionbien/excelcla.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Excel</a>
+                  </div>
+
+                  <div class="input-field col s6">
+                  <a href="wordclasificacion/wordclasificacion.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Word</a>
+                  </div>
               </div>
               <!-- tabla de activos -->
               <div id="activas" class="col s12">
@@ -37,6 +48,7 @@
                               <!--    controller, metod,id -->
                               <a href="?c=Clasificacionbien&a=Crud&id=<?php echo $r->idclasificacionbien; ?>" title="Editar Registro" ><i class="small material-icons blue-text">edit</i></a>
                           </td>
+                     
                           <td class="center">
                          </td>
                       </tr>

@@ -1,7 +1,7 @@
 <?php
 
-header("Content-type:application/xls");
-header('Content-Disposition: attachment;filename="Bienes.xls"');
+header("Content-type:application/vnd.ms-word");
+header('Content-Disposition: attachment;filename="Bienes.doc"');
 
 require_once('conexion.php');
 

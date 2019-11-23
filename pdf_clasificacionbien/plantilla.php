@@ -8,8 +8,7 @@ class PDF extends FPDF{
         /*$this->Image('imagenes/logo.png', 5, 5, 30 );*/
         $this->SetFont('Arial','B',15);
         $this->Cell(30);
-           
-        $this->Cell(120,10, 'Reporte del Bien',0,0,'C');
+        $this->Cell(120,10, 'Reporte de Clasificacionbien',0,0,'C');
 
         $this->Ln(20);
     }
