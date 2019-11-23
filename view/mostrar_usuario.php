@@ -26,6 +26,7 @@
                           <th>Correo electrónico</th>
                           <th class="center">Editar</th>
                           <th class="center">Desactivar</th>
+                          <th>Adicional</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -42,6 +43,13 @@
                           </td>
                           <td class="center">
                               <a onclick="javascript:return confirm('¿Seguro que desea desactivar este registro?');" href="?c=Usuario&a=CambiarEstado&nuevo_estado=0&id=<?php echo $r->idusuario; ?>" title="Desactivar Registro" ><i class="small material-icons red-text">cancel</i></a>
+                          </td>
+                          <td class="center">
+                              <!-- en la url pasamos parámetros para el controlador -->
+                              <!--    controller, metod,id -->
+                              <a href="pdf"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
+                              <a href="NuevoExcel/excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                           </td>
                       </tr>
                   <?php endforeach; ?>
@@ -60,6 +68,7 @@
                           <th>Correo electrónico</th>
                           <th class="center">Editar</th>
                           <th class="center">Activar</th>
+                          <th class="center">Adicional</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -75,7 +84,14 @@
                               <a href="?c=Usuario&a=Update&id=<?php echo $r->idusuario; ?>" title="Editar Registro" ><i class="small material-icons blue-text">edit</i></a>
                           </td>
                           <td class="center">
-                              <a onclick="javascript:return confirm('¿Seguro que desea desactivar este registro?');" href="?c=Usuario&a=CambiarEstado&nuevo_estado=1&id=<?php echo $r->idusuario; ?>" title="Activar Registro" ><i class="small material-icons green-text">check_circle</i></a>
+                              <a onclick="javascript:return confirm('¿Seguro que desea activar este registro?');" href="?c=Usuario&a=CambiarEstado&nuevo_estado=1&id=<?php echo $r->idusuario; ?>" title="Activar Registro" ><i class="small material-icons green-text">check_circle</i></a>
+                          </td>
+                          <td class="center">
+                              <!-- en la url pasamos parámetros para el controlador -->
+                              <!--    controller, metod,id -->
+                              <a href="pdf"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
+                              <a href="NuevoExcel/excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                           </td>
                       </tr>
                   <?php endforeach; ?>
