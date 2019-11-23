@@ -27,7 +27,7 @@
                           <th>Nombre</th>
                           <th>Descripción</th>
                           <th class="center">Editar</th>
-                          <th class="center"></th>
+                          <th class="center">Adicional</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -43,6 +43,12 @@
                               <a href="?c=Ubicacion&a=Crud&id=<?php echo $r->idubicacion; ?>" title="Editar Registro" ><i class="small material-icons blue-text">edit</i></a>
                           </td>
                           <td class="center">
+
+                          
+                          <a href="pdf/ubicacion.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons blue-text">archive</i></a><br>
+                              <a href="NuevoExcel/ubicacion.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/ubicacion.php" title="Imprimir en Word" ><i class="small material-icons green-text">print</i></a><br>
+                           
                          </td>
                       </tr>
                   <?php endforeach; ?>

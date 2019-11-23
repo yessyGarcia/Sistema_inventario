@@ -14,17 +14,7 @@
                   <li class="tab col s12"><a  class="active" href="#activas">Activos</a></li>
                   
                 </ul>
-                <div class="input-field col s6">
-                  <a href="pdf/clasificacionbien.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
-                  </div>
-
-                  <div class="input-field col s6">
-                  <a href="NuevoExcel/clasificacionbien.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Excel</a>
-                  </div>
-
-                  <div class="input-field col s6">
-                  <a href="word/wordclasificacion.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Word</a>
-                  </div>
+               
               </div>
               <!-- tabla de activos -->
               <div id="activas" class="col s12">
@@ -34,7 +24,8 @@
                           <th class="center">Id</th>
                           <th>Nombre</th>
                           <th class="center">Editar</th>
-                          <th class="center"></th>
+                         <th class="center">Adicional</th>
+                         
                       </tr>
                   </thead>
                   <tbody>
@@ -47,6 +38,14 @@
                               <!-- en la url pasamos parámetros para el controlador -->
                               <!--    controller, metod,id -->
                               <a href="?c=Clasificacionbien&a=Crud&id=<?php echo $r->idclasificacionbien; ?>" title="Editar Registro" ><i class="small material-icons blue-text">edit</i></a>
+                          </td>
+                          <td class="center">
+                              <!-- en la url pasamos parámetros para el controlador -->
+                              <!--    controller, metod,id -->
+                              <a href="pdf/clasificacionbien.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons blue-text">archive</i></a><br>
+                              <a href="NuevoExcel/clasificacionbien.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/wordclasificacion.php" title="Imprimir en Word" ><i class="small material-icons green-text">print</i></a><br>
+                         
                           </td>
                      
                           <td class="center">
