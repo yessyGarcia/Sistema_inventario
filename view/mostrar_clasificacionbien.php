@@ -15,15 +15,15 @@
                   
                 </ul>
                 <div class="input-field col s6">
-                  <a href="pdf_clasificacionbien"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
+                  <a href="pdf/clasificacionbien.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
                   </div>
 
                   <div class="input-field col s6">
-                  <a href="Excelclasificacionbien/excelcla.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Excel</a>
+                  <a href="NuevoExcel/clasificacionbien.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Excel</a>
                   </div>
 
                   <div class="input-field col s6">
-                  <a href="wordclasificacion/wordclasificacion.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Word</a>
+                  <a href="word/wordclasificacion.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir Word</a>
                   </div>
               </div>
               <!-- tabla de activos -->

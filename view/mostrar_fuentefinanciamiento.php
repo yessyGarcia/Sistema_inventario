@@ -14,6 +14,10 @@
                   <li class="tab col s12"><a  class="active" href="#activas">Activos</a></li>
                   
                 </ul>
+
+                <div class="input-field col s6">
+                  <a href="pdf/fuentefinanciamiento.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
+                  </div>
               </div>
               <!-- tabla de activos -->
               <div id="activas" class="col s12">
