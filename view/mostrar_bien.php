@@ -18,15 +18,7 @@
                 <div class="input-field col s6">
                   <a href="?c=Bien&a=Crud" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Nuevo</a>
                   </div>
-                  <div class="input-field col s6">
-                  <a href="pdf"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Imprimir</a>
-                  </div>
-                  <div class="input-field col s6">
-                  <a href="NuevoExcel/excel.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">add_to_photos</i>Imprimir Excel</a>
-                  </div>
-                  <div class="input-field col s6">
-                  <a href="word/word.php"target="_blank" class="waves-effect waves-light btn green"><i class="material-icons right">add_to_photos</i>Imprimir word</a>
-                  </div>
+                
               </div>
             </div>
             <div class="row">
@@ -84,7 +76,8 @@
                               <!--    controller, metod,id -->
                               <a href="pdf"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons blue-text">archive</i></a><br>
                               <a href="NuevoExcel/excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="pdf"target="_blank" title="Ver detalles" ><i class="small material-icons red-text">border_color</i></a>
+                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons green-text">print</i></a><br>
+                           <a href="pdf"target="_blank" title="Ver detalles" ><i class="small material-icons red-text">border_color</i></a>
                          
                           </td>
                       </tr>
