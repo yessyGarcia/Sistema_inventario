@@ -23,7 +23,7 @@
                           <th class="center">Id</th>
                           <th>Nombre</th>
                           <th class="center">Editar</th>
-                          <th class="center"></th>
+                          <th class="center">Adicional</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -38,6 +38,12 @@
                               <a href="?c=Tipocomprobante&a=Crud&id=<?php echo $r->idtipocomprobante; ?>" title="Editar Registro" ><i class="small material-icons blue-text">edit</i></a>
                           </td>
                           <td class="center">
+
+                              <!-- en la url pasamos parámetros para el controlador -->
+                              <!--    controller, metod,id -->
+                              <a href="pdf/tipocomprobante.php"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
+                              <a href="NuevoExcel/excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                           </td>
                       </tr>
                   <?php endforeach; ?>

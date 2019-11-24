@@ -43,9 +43,9 @@
                           </td>
                           <td class="center">
 
-                          <a href="pdf/fuentefinanciamiento.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons blue-text">archive</i></a><br>
+                          <a href="pdf/fuentefinanciamiento.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
                               <a href="NuevoExcel/fuentefinanciamiento.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/fuentefinanciamiento.php" title="Imprimir en Word" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/fuentefinanciamiento.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                            
                           </td>
                       </tr>

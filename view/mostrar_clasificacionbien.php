@@ -42,9 +42,9 @@
                           <td class="center">
                               <!-- en la url pasamos parámetros para el controlador -->
                               <!--    controller, metod,id -->
-                              <a href="pdf/clasificacionbien.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons blue-text">archive</i></a><br>
+                              <a href="pdf/clasificacionbien.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
                               <a href="NuevoExcel/clasificacionbien.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/wordclasificacion.php" title="Imprimir en Word" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/wordclasificacion.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                          
                           </td>
                      

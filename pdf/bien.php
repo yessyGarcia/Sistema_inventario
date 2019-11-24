@@ -1,5 +1,24 @@
+<?php
+require 'fpdf/fpdf.php';
+
+class PDF extends FPDF{
+
+    function Header(){
+     
+        $this->SetFont('Arial','B',15);
+        $this->Cell(30);
+        $this->Cell(120,10, 'Reporte del bien',0,0,'C');
+        $this->Ln(20);
+    }
+    
+    function Footer(){
+        $this->SetY(-15);
+        $this->SetFont('Arial','I', 8);
+        $this->Cell(0,10, 'Pagina '.$this->PageNo().'/{nb}',0,0,'C'); 
+    }
+}
+?>
 <?php 
-    include 'plantilla.php';
     require 'Conexion.php';
     require '../model/Bien.php';
     
@@ -13,12 +32,12 @@
     $pdf->SetFillColor(232,232,232);
     $pdf->SetFont('Arial', 'B', 12);
 
-    $pdf->Cell(12,6,'Bien',1,0,'c',1);
-    $pdf->Cell(21,6,'CodigoInterno',1,0,'c',1);
+    $pdf->Cell(12,6,'N',1,0,'c',1);
+    $pdf->Cell(21,6,'Cod-Interno',1,0,'c',1);
     $pdf->Cell(23,6,'Mined',1,0,'c',1);
     $pdf->Cell(16,6,'Itca',1,0,'c',1);
     $pdf->Cell(26,6,'Nombre',1,0,'c',1);
-    $pdf->Cell(21,6,'Clasificacion',1,0,'c',1);
+    $pdf->Cell(21,6,'Clasif...',1,0,'c',1);
     $pdf->Cell(21,6,'Tipo',1,0,'c',1);
     $pdf->Cell(21,6,'Descripcion',1,0,'c',1);
     $pdf->Cell(21,6,'Marca',1,0,'c',1);
@@ -30,11 +49,11 @@
     $pdf->Cell(21,6,'Estado',1,0,'c',1);
     $pdf->Cell(21,6,'Financiamiento',1,0,'c',1);
     $pdf->Cell(21,6,'Comprobante',1,0,'c',1);
-    $pdf->Cell(21,6,'numero',1,0,'c',1);
-    $pdf->Cell(21,6,'fecha',1,0,'c',1);
-    $pdf->Cell(21,6,'departamento',1,0,'c',1);
-    $pdf->Cell(21,6,'observaciones',1,0,'c',1);
-    $pdf->Cell(21,6,'UsuarioRegistro',1,1,'c',1);
+    $pdf->Cell(21,6,'Num.',1,0,'c',1);
+    $pdf->Cell(21,6,'Fecha',1,0,'c',1);
+    $pdf->Cell(21,6,'Departamento',1,0,'c',1);
+    $pdf->Cell(21,6,'Observaciones',1,0,'c',1);
+    $pdf->Cell(21,6,'Registro',1,1,'c',1);
    
     $pdf->SetFont('Arial', '', 10);
 

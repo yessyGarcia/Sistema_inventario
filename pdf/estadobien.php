@@ -7,7 +7,7 @@ class PDF extends FPDF{
      
         $this->SetFont('Arial','B',15);
         $this->Cell(30);
-        $this->Cell(120,10, 'Reporte de Ubicacion del bien',0,0,'C');
+        $this->Cell(120,10, 'Reporte de Estado del Bien',0,0,'C');
         $this->Ln(20);
     }
     
@@ -19,10 +19,11 @@ class PDF extends FPDF{
 }
 ?>
 <?php 
+   
     require 'Conexion.php';
-    require '../model/Ubicacion.php';
-
-    $query1 = "SELECT * FROM ubicacion";
+    require '../model/Estadobien.php';
+    
+    $query1 = "SELECT * FROM estadobien";
     $resultado = $mysqli->query($query1);
 
     $pdf = new PDF();
@@ -31,17 +32,16 @@ class PDF extends FPDF{
 
     $pdf->SetFillColor(232,232,232);
     $pdf->SetFont('Arial', 'B', 12);
-    $pdf->Cell(60,6,'N',1,0,'c',1);
-    $pdf->Cell(60,6,'Nombre',1,0,'c',1);
-    $pdf->Cell(60,6,'Descripcion',1,1,'c',1);
+
+    $pdf->Cell(34,6,'N',1,0,'c',1);
+    $pdf->Cell(100,6,'Nombre',1,1,'c',1);
    
     $pdf->SetFont('Arial', '', 10);
 
     while($row = $resultado->fetch_assoc()){
 
-        $pdf->Cell(60,6,$row['idubicacion'],1,0,'c');
-        $pdf->Cell(60,6,$row['nombre'],1,0,'c');
-        $pdf->Cell(60,6,$row['descripcion'],1,1,'c');
+        $pdf->Cell(34,6,$row['idestadobien'],1,0,'c');
+        $pdf->Cell(100,6,$row['nombre'],1,1,'c');
     }
     $pdf->Output();
 ?>
