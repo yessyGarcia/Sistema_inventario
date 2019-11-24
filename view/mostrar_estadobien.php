@@ -41,8 +41,8 @@
                               <!-- en la url pasamos parámetros para el controlador -->
                               <!--    controller, metod,id -->
                               <a href="pdf/estadobien.php"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
-                              <a href="NuevoExcel/excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
+                              <a href="NuevoExcel/estadobien.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
+                              <a href="word/estadobien.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
                           </td>
                       </tr>
                   <?php endforeach; ?>

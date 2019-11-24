@@ -13,7 +13,7 @@ $query1 = "SELECT * FROM ubicacion";
 <table>
         <tr>
 
-        <th>Idubicacion</th>
+        <th>Id</th>
         <th>Nombre</th>
         <th>Descripcion</th>
        

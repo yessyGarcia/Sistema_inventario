@@ -1,11 +1,11 @@
 <?php
 
 header("Content-type:application/vnd.ms-word");
-header('Content-Disposition: attachment;filename="Clasificacionbien.doc"');
+header('Content-Disposition: attachment;filename="Departamento.doc"');
 
 require_once('conexion.php');
 
-$query1 = "SELECT * FROM clasificacionbien";
+$query1 = "SELECT * FROM departamento";
    $resultado = $mysqli->query($query1);
 
    ?>
@@ -15,6 +15,7 @@ $query1 = "SELECT * FROM clasificacionbien";
 
         <th>Id</th>
         <th>Nombre</th>
+        <th>Codigo</th>
        
         
         </tr>
@@ -25,8 +26,9 @@ $query1 = "SELECT * FROM clasificacionbien";
 while ($row=mysqli_fetch_assoc($resultado)){
     ?>
 <tr>
-    <td><?php echo $row['idclasificacionbien']; ?></td>
+    <td><?php echo $row['iddepartamento']; ?></td>
     <td><?php echo $row['nombre']; ?></td>
+    <td><?php echo $row['codigodepartamento']; ?></td>
 
     </tr>
             <?php
