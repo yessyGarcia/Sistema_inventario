@@ -5,15 +5,12 @@ header('Content-Disposition: attachment;filename="Bienes.xls"');
 
 require_once('conexion.php');
 
-
-
 $query1 = "SELECT b.idbien as idbien, codigointerno, codigomined, codigoitca, c.nombre as idclasificacionbien, tipobien, descripcionbien, marca, modelo, serie, ub.nombre as idubicacion, costobien, u.nombre as idusuariocustodio, e.nombre as estadobien, f.nombre as idfuentefinanciamiento, t.nombre as idtipocomprobante, numerocomprobante, fechaadquisicion, d.nombre as iddepartamento, observaciones, u.nombre as nombre FROM bien as b INNER JOIN usuario AS u ON b.idusuariocustodio = u.idusuario INNER JOIN departamento AS d ON b.iddepartamento = d.iddepartamento INNER JOIN tipocomprobante AS t ON b.idtipocomprobante = t.idtipocomprobante INNER JOIN fuentefinanciamiento AS f ON b.idfuentefinanciamiento = f.idfuentefinanciamiento INNER JOIN estadobien AS e ON b.idestadobien = e.idestadobien INNER JOIN ubicacion AS ub ON b.idubicacion = ub.idubicacion INNER JOIN clasificacionbien AS c ON b.idclasificacionbien = c.idclasificacionbien ORDER BY idbien";
 $resultado = $mysqli->query($query1);
 ?>
 
 <table>
-        <tr>
-
+    <tr>
         <th>Bien</th>
         <th>Interno</th>
         <th>Mined</th>
@@ -36,11 +33,9 @@ $resultado = $mysqli->query($query1);
         <th>Departamento</th>
         <th>Observaciones</th>
         <th>Nombre</th>
-        
-        </tr>
+    </tr>
 
         <?php 
-/*while($row = $resultado->fetch_assoc())*/
         while ($row=mysqli_fetch_assoc($resultado)){
             ?>
         <tr>
@@ -70,8 +65,7 @@ $resultado = $mysqli->query($query1);
             <?php
         }
         ?>
-  
-        <tr>
+  <tr>
         <td></td>
         </tr>
 </table>           

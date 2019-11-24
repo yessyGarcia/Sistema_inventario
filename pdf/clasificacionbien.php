@@ -32,6 +32,7 @@ class PDF extends FPDF{
 
     $pdf->SetFillColor(232,232,232);
     $pdf->SetFont('Arial', 'B', 12);
+    
     $pdf->Cell(20,6,'N',1,0,'c',1);
     $pdf->Cell(70,6,'Nombre',1,1,'c',1);
     $pdf->SetFont('Arial', '', 10);

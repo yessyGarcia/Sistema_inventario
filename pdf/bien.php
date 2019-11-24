@@ -25,7 +25,7 @@ class PDF extends FPDF{
    $query1 = "SELECT b.idbien as idbien, codigointerno, codigomined, codigoitca, c.nombre as idclasificacionbien, tipobien, descripcionbien, marca, modelo, serie, ub.nombre as idubicacion, costobien, u.nombre as idusuariocustodio, e.nombre as estadobien, f.nombre as idfuentefinanciamiento, t.nombre as idtipocomprobante, numerocomprobante, fechaadquisicion, d.nombre as iddepartamento, observaciones, u.nombre as nombre FROM bien as b INNER JOIN usuario AS u ON b.idusuariocustodio = u.idusuario INNER JOIN departamento AS d ON b.iddepartamento = d.iddepartamento INNER JOIN tipocomprobante AS t ON b.idtipocomprobante = t.idtipocomprobante INNER JOIN fuentefinanciamiento AS f ON b.idfuentefinanciamiento = f.idfuentefinanciamiento INNER JOIN estadobien AS e ON b.idestadobien = e.idestadobien INNER JOIN ubicacion AS ub ON b.idubicacion = ub.idubicacion INNER JOIN clasificacionbien AS c ON b.idclasificacionbien = c.idclasificacionbien ORDER BY idbien";
    $resultado = $mysqli->query($query1);
 
-    $pdf = new PDF();
+    $pdf = new PDF('L');
     $pdf->AliasNbPages();
     $pdf->AddPage();
 
@@ -33,11 +33,11 @@ class PDF extends FPDF{
     $pdf->SetFont('Arial', 'B', 12);
 
     $pdf->Cell(12,6,'N',1,0,'c',1);
-    $pdf->Cell(21,6,'Cod-Interno',1,0,'c',1);
+    $pdf->Cell(21,6,'Interno',1,0,'c',1);
     $pdf->Cell(23,6,'Mined',1,0,'c',1);
     $pdf->Cell(16,6,'Itca',1,0,'c',1);
-    $pdf->Cell(26,6,'Nombre',1,0,'c',1);
-    $pdf->Cell(21,6,'Clasif...',1,0,'c',1);
+    $pdf->Cell(30,6,'Nombre',1,0,'c',1);
+    $pdf->Cell(40,6,'Clasificacion',1,0,'c',1);
     $pdf->Cell(21,6,'Tipo',1,0,'c',1);
     $pdf->Cell(21,6,'Descripcion',1,0,'c',1);
     $pdf->Cell(21,6,'Marca',1,0,'c',1);
@@ -62,15 +62,15 @@ class PDF extends FPDF{
         $pdf->Cell(21,6,$row['codigointerno'],1,0,'c');
         $pdf->Cell(23,6,$row['codigomined'],1,0,'c');
         $pdf->Cell(16,6,$row['codigoitca'],1,0,'c');
-        $pdf->Cell(26,6,$row['nombre'],1,0,'c');
-        $pdf->Cell(21,6,$row['idclasificacionbien'],1,0,'c');
+        $pdf->Cell(30,6,$row['nombre'],1,0,'c');
+        $pdf->Cell(40,6,$row['idclasificacionbien'],1,0,'c');
         $pdf->Cell(21,6,$row['tipobien'],1,0,'c');
         $pdf->Cell(21,6,$row['descripcionbien'],1,0,'c');
         $pdf->Cell(21,6,$row['marca'],1,0,'c');
         $pdf->Cell(17,6,$row['modelo'],1,0,'c');
         $pdf->Cell(21,6,$row['serie'],1,0,'c');
         $pdf->Cell(21,6,$row['idubicacion'],1,0,'c');
-        $pdf->Cell(21,6,$row['costobien'],1,0,'c',1);
+        $pdf->Cell(21,6,$row['costobien'],1,0,'c');
         $pdf->Cell(21,6,$row['idusuariocustodio'],1,0,'c');
         $pdf->Cell(21,6,$row['estadobien'],1,0,'c');
         $pdf->Cell(21,6,$row['idfuentefinanciamiento'],1,0,'c');
