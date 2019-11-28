@@ -15,7 +15,7 @@ $query1 = "SELECT * FROM departamento";
 
         <th>Id</th>
         <th>Nombre</th>
-        <th>Codigo</th>
+        <th>Código</th>
        
         
         </tr>

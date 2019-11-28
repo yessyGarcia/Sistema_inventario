@@ -15,7 +15,7 @@ $query1 = "SELECT * FROM ubicacion";
 
         <th>Id</th>
         <th>Nombre</th>
-        <th>Descripcion</th>
+        <th>Descripción</th>
        
         
         </tr>
