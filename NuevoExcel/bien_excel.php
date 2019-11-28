@@ -8,33 +8,138 @@ $resultado = $mysqli->query($query1);
 $fila = 2;
 $objPHPExcel = new PHPExcel();
 
+//ESTILO PARA FORMATO EXCEL
+$estilo = array(
+    'borders' => array(
+    'outline' => array(
+    'style' =>PHPExcel_Style_Border::
+BORDER_THIN  
+    )   
+  )
+);
+$estilo1 = array(
+    'font' => array(
+    'bold' => true,
+    'center' => true,
+    'size' =>10,
+    'name' => 'Verdana'
+));
+
+
 $objPHPExcel->setActiveSheetIndex();
 $objPHPExcel->getActiveSheet()->setTitle('Bien');
 
-$objPHPExcel->getActiveSheet()->setCellValue('A1', 'Bien');
-$objPHPExcel->getActiveSheet()->setCellValue('B1', 'Interno');
-$objPHPExcel->getActiveSheet()->setCellValue('C1', 'Mined');
-$objPHPExcel->getActiveSheet()->setCellValue('D1', 'Itca');
-$objPHPExcel->getActiveSheet()->setCellValue('E1', 'Nombre');
-$objPHPExcel->getActiveSheet()->setCellValue('F1', 'Clasificacion');
-$objPHPExcel->getActiveSheet()->setCellValue('G1', 'Tipo');
-$objPHPExcel->getActiveSheet()->setCellValue('H1', 'Descripcion');
-$objPHPExcel->getActiveSheet()->setCellValue('I1', 'Marca');
-$objPHPExcel->getActiveSheet()->setCellValue('J1', 'Modelo');
-$objPHPExcel->getActiveSheet()->setCellValue('K1', 'Serie');
-$objPHPExcel->getActiveSheet()->setCellValue('L1', 'Ubicacion');
-$objPHPExcel->getActiveSheet()->setCellValue('M1', 'Costo');
-$objPHPExcel->getActiveSheet()->setCellValue('N1', 'Custodio');
-$objPHPExcel->getActiveSheet()->setCellValue('O1', 'Estado');
-$objPHPExcel->getActiveSheet()->setCellValue('P1', 'Financiamiento');
-$objPHPExcel->getActiveSheet()->setCellValue('Q1', 'TipoComprob');
-$objPHPExcel->getActiveSheet()->setCellValue('R1', 'Numero');
-$objPHPExcel->getActiveSheet()->setCellValue('S1', 'Fechaadquisicion');
-$objPHPExcel->getActiveSheet()->setCellValue('T1', 'Departamento');
-$objPHPExcel->getActiveSheet()->setCellValue('U1', 'Observaciones');
-$objPHPExcel->getActiveSheet()->setCellValue('V1', 'Nombre');
+$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(10);
+$objPHPExcel->getActiveSheet()->setCellValue('A1', 'N');
+$objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estilo1);
 
-while ($row=mysqli_fetch_assoc($resultado))
+$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('B1', 'Interno');
+$objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('C1', 'Mined');
+$objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('D1', 'Itca');
+$objPHPExcel->getActiveSheet()->getStyle('D1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('D1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('E')->setWidth(18);
+$objPHPExcel->getActiveSheet()->setCellValue('E1', 'Nombre');
+$objPHPExcel->getActiveSheet()->getStyle('E1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('E1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('F')->setWidth(23);
+$objPHPExcel->getActiveSheet()->setCellValue('F1', 'Clasificación');
+$objPHPExcel->getActiveSheet()->getStyle('F1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('F1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+$objPHPExcel->getActiveSheet()->setCellValue('G1', 'Tipo');
+$objPHPExcel->getActiveSheet()->getStyle('G1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('G1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+$objPHPExcel->getActiveSheet()->setCellValue('H1', 'Descripción');
+$objPHPExcel->getActiveSheet()->getStyle('H1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('H1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('I')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('I1', 'Marca');
+$objPHPExcel->getActiveSheet()->getStyle('I1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('I1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('J')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('J1', 'Modelo');
+$objPHPExcel->getActiveSheet()->getStyle('J1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('J1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('K')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('K1', 'Serie');
+$objPHPExcel->getActiveSheet()->getStyle('K1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('K1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('L')->setWidth(13);
+$objPHPExcel->getActiveSheet()->setCellValue('L1', 'Ubicación');
+$objPHPExcel->getActiveSheet()->getStyle('L1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('L1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('M')->setWidth(10);
+$objPHPExcel->getActiveSheet()->setCellValue('M1', 'Costo');
+$objPHPExcel->getActiveSheet()->getStyle('M1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('M1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('N')->setWidth(18);
+$objPHPExcel->getActiveSheet()->setCellValue('N1', 'Custodio');
+$objPHPExcel->getActiveSheet()->getStyle('N1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('N1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('O')->setWidth(16);
+$objPHPExcel->getActiveSheet()->setCellValue('O1', 'Estado');
+$objPHPExcel->getActiveSheet()->getStyle('O1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('O1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('P')->setWidth(20);
+$objPHPExcel->getActiveSheet()->setCellValue('P1', 'Financiamiento');
+$objPHPExcel->getActiveSheet()->getStyle('P1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('P1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('Q')->setWidth(15);
+$objPHPExcel->getActiveSheet()->setCellValue('Q1', 'Comprobante');
+$objPHPExcel->getActiveSheet()->getStyle('Q1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('Q1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('R')->setWidth(16);
+$objPHPExcel->getActiveSheet()->setCellValue('R1', 'N.Comprobante');
+$objPHPExcel->getActiveSheet()->getStyle('R1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('R1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('S')->setWidth(16);
+$objPHPExcel->getActiveSheet()->setCellValue('S1', 'Adquisición');
+$objPHPExcel->getActiveSheet()->getStyle('S1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('S1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('T')->setWidth(40);
+$objPHPExcel->getActiveSheet()->setCellValue('T1', 'Departamento');
+$objPHPExcel->getActiveSheet()->getStyle('T1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('T1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('U')->setWidth(35);
+$objPHPExcel->getActiveSheet()->setCellValue('U1', 'Observaciones');
+$objPHPExcel->getActiveSheet()->getStyle('U1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('U1')->applyFromArray($estilo1);
+
+$objPHPExcel->getActiveSheet()->getColumnDimension('V')->setWidth(20);
+$objPHPExcel->getActiveSheet()->setCellValue('V1', 'Registró');
+$objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo);
+$objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo1);
+
+while ($row = $resultado->fetch_assoc())
 {
     $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idbien']);
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['codigointerno']); 
@@ -58,6 +163,8 @@ while ($row=mysqli_fetch_assoc($resultado))
     $objPHPExcel->getActiveSheet()->setCellValue('T'.$fila, $row['iddepartamento']); 
     $objPHPExcel->getActiveSheet()->setCellValue('U'.$fila, $row['observaciones']); 
     $objPHPExcel->getActiveSheet()->setCellValue('V'.$fila, $row['nombre']); 
+
+    $fila++;
 }
     header("Content-type:application/xls");
     header('Content-Disposition: attachment;filename="Bienes.xls"');
@@ -65,6 +172,6 @@ while ($row=mysqli_fetch_assoc($resultado))
 
 $objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
-exit;
+//exit;
 ?>
 
