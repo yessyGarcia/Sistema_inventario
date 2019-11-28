@@ -58,6 +58,7 @@ class PDF extends FPDF{
     $pdf->SetFont('Arial', '', 10);
 
     while($row = $resultado->fetch_assoc()){
+        
         $pdf->Cell(12,6,$row['idbien'],1,0,'c');
         $pdf->Cell(21,6,$row['codigointerno'],1,0,'c');
         $pdf->Cell(23,6,$row['codigomined'],1,0,'c');

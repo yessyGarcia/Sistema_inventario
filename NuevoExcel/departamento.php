@@ -39,13 +39,13 @@ $objPHPExcel->getActiveSheet()->setCellValue('A1', 'N');
 $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estilo);
 $objPHPExcel->getActiveSheet()->getStyle('A1')->applyFromArray($estilo1);
 
-$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(15);
+$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(60);
 $objPHPExcel->getActiveSheet()->setCellValue('B1', 'Nombre');
 $objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo);
 $objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo1);
 
-$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(15);
-$objPHPExcel->getActiveSheet()->setCellValue('C1', 'Código Departamento');
+$objPHPExcel->getActiveSheet()->getColumnDimension('C')->setWidth(20);
+$objPHPExcel->getActiveSheet()->setCellValue('C1', 'Código');
 $objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo);
 $objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo1);
 

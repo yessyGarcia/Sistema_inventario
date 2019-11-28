@@ -139,7 +139,8 @@ $objPHPExcel->getActiveSheet()->setCellValue('V1', 'Registró');
 $objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo);
 $objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo1);
 
-while ($row = $resultado->fetch_assoc())
+while ($row=mysqli_fetch_assoc($resultado))
+//while ($row = $resultado->fetch_assoc())
 {
     $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idbien']);
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['codigointerno']); 
