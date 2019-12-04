@@ -2,13 +2,8 @@
 require_once '/Classes/PHPExcel.php';
 require_once('conexion.php');
 
-
-
-
 $query1 = "SELECT * FROM fuentefinanciamiento";
    $resultado = $mysqli->query($query1);
-
-  
 
 $fila = 2;
 $objPHPExcel = new PHPExcel();
@@ -52,19 +47,19 @@ $objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo1);
 while ($row = $resultado->fetch_assoc())
 {
 
-
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idfuentefinanciamiento']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['nombre']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['codigofuentefinanciamiento']); 
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila,utf8_encode($row['idfuentefinanciamiento'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila,utf8_encode($row['nombre'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila,utf8_encode($row['codigofuentefinanciamiento'])); 
 
     $fila++;
 }
-    header("Content-type:application/xls");
+
+header("Content-type:application/xls");
 header('Content-Disposition: attachment;filename="Financiamiento.xls"');
 header('Cache-Control: max-age=0');
 
 
-    $objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
-//exit;
+
 ?>

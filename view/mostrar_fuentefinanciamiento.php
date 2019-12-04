@@ -12,8 +12,20 @@
               <div class="col s12">
                 <ul class="tabs">
                   <li class="tab col s12"><a  class="active" href="#activas">Activos</a></li>
-                  
                 </ul>
+                <div class="input-field col s2">
+                  <a href="?c=Fuentefinanciamiento&a=Crud" class="waves-effect waves-light btn sky_blue"><i class="material-icons right">send</i>Nuevo</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="NuevoExcel/fuentefinanciamiento.php" class="waves-effect waves-light btn green"><i class="material-icons right">print</i>Excel</a>
+                </div> 
+                <div class="input-field col s2">
+                  <a href="word/fuentefinanciamiento.php" class="waves-effect waves-light btn blue"><i class="material-icons right">print</i>Word</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="pdf/fuentefinanciamiento.php" target="_blank" class="waves-effect waves-light btn black"><i class="material-icons right">print</i>Pdf</a>
+                </div>        
+         </div>
 
                 
               </div>
@@ -44,9 +56,6 @@
                           <td class="center">
 
                           <a href="pdf/fuentefinanciamiento.php"target="_blank" title="Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
-                              <a href="NuevoExcel/fuentefinanciamiento.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/fuentefinanciamiento.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
-                           
                           </td>
                       </tr>
                   <?php endforeach; ?>

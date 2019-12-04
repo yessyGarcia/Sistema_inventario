@@ -12,8 +12,20 @@
               <div class="col s12">
                 <ul class="tabs">
                   <li class="tab col s6"><a  class="active" href="#activas">Activos</a></li>
-                 
                 </ul>
+                <div class="input-field col s2">
+                  <a href="?c=Tipomovimiento&a=Crud" class="waves-effect waves-light btn sky_blue"><i class="material-icons right">send</i>Nuevo</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="NuevoExcel/tipomovimiento.php" class="waves-effect waves-light btn green"><i class="material-icons right">print</i>Excel</a>
+                </div> 
+                <div class="input-field col s2">
+                  <a href="word/tipomovimiento.php" class="waves-effect waves-light btn blue"><i class="material-icons right">print</i>Word</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="pdf/tipomovimiento.php" target="_blank" class="waves-effect waves-light btn black"><i class="material-icons right">print</i>Pdf</a>
+                </div>        
+         </div>
               </div>
               <!-- tabla de activos -->
               <div id="activas" class="col s12">

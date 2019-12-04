@@ -12,8 +12,20 @@
               <div class="col s12">
                 <ul class="tabs">
                   <li class="tab col s12"><a  class="active" href="#activas">Activos</a></li>
-                  
                 </ul>
+                <div class="input-field col s2">
+                  <a href="?c=Estadobien&a=Crud" class="waves-effect waves-light btn sky_blue"><i class="material-icons right">send</i>Nuevo</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="NuevoExcel/estadobien.php" class="waves-effect waves-light btn green"><i class="material-icons right">print</i>Excel</a>
+                </div> 
+                <div class="input-field col s2">
+                  <a href="word/estadobien.php" class="waves-effect waves-light btn blue"><i class="material-icons right">print</i>Word</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="pdf/estadobien.php" target="_blank" class="waves-effect waves-light btn black"><i class="material-icons right">print</i>Pdf</a>
+                </div>        
+         </div>
               </div>
               <!-- tabla de activos -->
               <div id="activas" class="col s12">
@@ -41,9 +53,7 @@
                               <!-- en la url pasamos parámetros para el controlador -->
                               <!--    controller, metod,id -->
                               <a href="pdf/estadobien.php"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
-                              <a href="NuevoExcel/estadobien.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/estadobien.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
-                          </td>
+                              </td>
                       </tr>
                   <?php endforeach; ?>
                   </tbody>

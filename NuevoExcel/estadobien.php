@@ -2,13 +2,8 @@
 require_once '/Classes/PHPExcel.php';
 require_once('conexion.php');
 
-
-
-
 $query1 = "SELECT * FROM estadobien";
    $resultado = $mysqli->query($query1);
-
-  
 
 $fila = 2;
 $objPHPExcel = new PHPExcel();
@@ -49,13 +44,13 @@ $objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo1);
 while ($row = $resultado->fetch_assoc())
 {
 
-
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idestadobien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['nombre']); 
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila,utf8_encode($row['idestadobien'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila,utf8_encode($row['nombre'])); 
     
     $fila++;
 }
-    header("Content-type:application/xls");
+
+header("Content-type:application/xls");
 header('Content-Disposition: attachment;filename="Estadodelbien.xls"');
 header('Cache-Control: max-age=0');
 

@@ -2,15 +2,10 @@
 require_once '/Classes/PHPExcel.php';
 require_once('conexion.php');
 
-
-
-
 $query1 = "SELECT * FROM departamento";
    $resultado = $mysqli->query($query1);
 
-  
-
-$fila = 2;
+   $fila = 2;
 $objPHPExcel = new PHPExcel();
 
 //ESTILO PARA FORMATO EXCEL
@@ -52,19 +47,18 @@ $objPHPExcel->getActiveSheet()->getStyle('C1')->applyFromArray($estilo1);
 while ($row = $resultado->fetch_assoc())
 {
 
-
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['iddepartamento']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['nombre']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['codigodepartamento']); 
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila,utf8_encode($row['iddepartamento'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila,utf8_encode($row['nombre'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila,utf8_encode($row['codigodepartamento'])); 
 
     $fila++;
 }
-    header("Content-type:application/xls");
+
+header("Content-type:application/xls");
 header('Content-Disposition: attachment;filename="Departamento.xls"');
 header('Cache-Control: max-age=0');
 
-
-    $objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+$objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
-//exit;
+
 ?>

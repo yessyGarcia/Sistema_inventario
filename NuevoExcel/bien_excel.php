@@ -140,37 +140,63 @@ $objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo);
 $objPHPExcel->getActiveSheet()->getStyle('V1')->applyFromArray($estilo1);
 
 while ($row=mysqli_fetch_assoc($resultado))
-//while ($row = $resultado->fetch_assoc())
+
 {
     $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idbien']);
     $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['codigointerno']); 
     $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila, $row['codigomined']); 
     $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila, $row['codigoitca']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila, $row['nombre']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('F'.$fila, $row['idclasificacionbien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('G'.$fila, $row['tipobien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('H'.$fila, $row['descripcionbien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('I'.$fila, $row['marca']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('J'.$fila, $row['modelo']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('K'.$fila, $row['serie']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('L'.$fila, $row['idubicacion']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila, $row['costobien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('N'.$fila, $row['idusuariocustodio']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('O'.$fila, $row['estadobien']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('P'.$fila, $row['idfuentefinanciamiento']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('Q'.$fila, $row['idtipocomprobante']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('R'.$fila, $row['numerocomprobante']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('S'.$fila, $row['fechaadquisicion']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('T'.$fila, $row['iddepartamento']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('U'.$fila, $row['observaciones']); 
-    $objPHPExcel->getActiveSheet()->setCellValue('V'.$fila, $row['nombre']); 
+    $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila,utf8_encode($row['nombre']));
+    $objPHPExcel->getActiveSheet()->setCellValue('F'.$fila,utf8_encode($row['idclasificacionbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('G'.$fila,utf8_encode($row['tipobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('H'.$fila,utf8_encode($row['descripcionbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('I'.$fila,utf8_encode($row['marca']));
+    $objPHPExcel->getActiveSheet()->setCellValue('J'.$fila,utf8_encode($row['modelo']));
+    $objPHPExcel->getActiveSheet()->setCellValue('K'.$fila,utf8_encode($row['serie']));
+    $objPHPExcel->getActiveSheet()->setCellValue('L'.$fila,utf8_encode($row['idubicacion']));
+    $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila,utf8_encode($row['costobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('N'.$fila,utf8_encode($row['idusuariocustodio']));
+    $objPHPExcel->getActiveSheet()->setCellValue('O'.$fila,utf8_encode($row['estadobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('P'.$fila,utf8_encode($row['idfuentefinanciamiento']));
+    $objPHPExcel->getActiveSheet()->setCellValue('Q'.$fila,utf8_encode($row['idtipocomprobante']));
+    $objPHPExcel->getActiveSheet()->setCellValue('R'.$fila,utf8_encode($row['numerocomprobante']));
+    $objPHPExcel->getActiveSheet()->setCellValue('S'.$fila,utf8_encode($row['fechaadquisicion']));
+    $objPHPExcel->getActiveSheet()->setCellValue('T'.$fila,utf8_encode($row['iddepartamento']));
+    $objPHPExcel->getActiveSheet()->setCellValue('U'.$fila,utf8_encode($row['observaciones']));
+    $objPHPExcel->getActiveSheet()->setCellValue('V'.$fila,utf8_encode($row['nombre']));
 
+   /* 
+    ---------------------------------PARA TODO MAYUSCULA------------------------------
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila,mb_strtoupper($row['idbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila,mb_strtoupper($row['codigointerno'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('C'.$fila,mb_strtoupper($row['codigomined'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('D'.$fila,mb_strtoupper($row['codigoitca'])); 
+    $objPHPExcel->getActiveSheet()->setCellValue('E'.$fila,mb_strtoupper($row['nombre']));
+    $objPHPExcel->getActiveSheet()->setCellValue('F'.$fila,mb_strtoupper($row['idclasificacionbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('G'.$fila,mb_strtoupper($row['tipobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('H'.$fila,mb_strtoupper($row['descripcionbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('I'.$fila,mb_strtoupper($row['marca']));
+    $objPHPExcel->getActiveSheet()->setCellValue('J'.$fila,mb_strtoupper($row['modelo']));
+    $objPHPExcel->getActiveSheet()->setCellValue('K'.$fila,mb_strtoupper($row['serie']));
+    $objPHPExcel->getActiveSheet()->setCellValue('L'.$fila,mb_strtoupper($row['idubicacion']));
+    $objPHPExcel->getActiveSheet()->setCellValue('M'.$fila,mb_strtoupper($row['costobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('N'.$fila,mb_strtoupper($row['idusuariocustodio']));
+    $objPHPExcel->getActiveSheet()->setCellValue('O'.$fila,mb_strtoupper($row['estadobien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('P'.$fila,mb_strtoupper($row['idfuentefinanciamiento']));
+    $objPHPExcel->getActiveSheet()->setCellValue('Q'.$fila,mb_strtoupper($row['idtipocomprobante']));
+    $objPHPExcel->getActiveSheet()->setCellValue('R'.$fila,mb_strtoupper($row['numerocomprobante']));
+    $objPHPExcel->getActiveSheet()->setCellValue('S'.$fila,mb_strtoupper($row['fechaadquisicion']));
+    $objPHPExcel->getActiveSheet()->setCellValue('T'.$fila,mb_strtoupper($row['iddepartamento']));
+    $objPHPExcel->getActiveSheet()->setCellValue('U'.$fila,mb_strtoupper($row['observaciones']));
+    $objPHPExcel->getActiveSheet()->setCellValue('V'.$fila,mb_strtoupper($row['nombre']));
+ */
     $fila++;
 }
+
     header("Content-type:application/xls");
     header('Content-Disposition: attachment;filename="Bienes.xls"');
     header('Cache-Control: max-age=0');
-
+ 
 $objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
 //exit;

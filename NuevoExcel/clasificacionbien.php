@@ -41,8 +41,8 @@ $objPHPExcel->getActiveSheet()->getStyle('B1')->applyFromArray($estilo1);
 
 while ($row = $resultado->fetch_assoc())
 {
-    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila, $row['idclasificacionbien']);
-    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila, $row['nombre']); 
+    $objPHPExcel->getActiveSheet()->setCellValue('A'.$fila,utf8_encode($row['idclasificacionbien']));
+    $objPHPExcel->getActiveSheet()->setCellValue('B'.$fila,utf8_encode($row['nombre'])); 
 
     $fila++;
 }
@@ -52,6 +52,6 @@ while ($row = $resultado->fetch_assoc())
 
 $objWriter=PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
 $objWriter->save('php://output');
-//exit;
+
 ?>
      

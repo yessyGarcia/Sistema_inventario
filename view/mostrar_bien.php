@@ -15,11 +15,19 @@
                   <li class="tab col s6"><a  href="#inactivas">Descargos</a></li>
                  
                 </ul>
-                <div class="input-field col s6">
-                  <a href="?c=Bien&a=Crud" class="waves-effect waves-light btn green"><i class="material-icons right">send</i>Nuevo</a>
-                  </div>
-                
-              </div>
+                <div class="input-field col s2">
+                  <a href="?c=Bien&a=Crud" class="waves-effect waves-light btn sky_blue"><i class="material-icons right">send</i>Nuevo</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="NuevoExcel/bien_excel.php" class="waves-effect waves-light btn green"><i class="material-icons right">print</i>Excel</a>
+                </div> 
+                <div class="input-field col s2">
+                  <a href="word/word.php" class="waves-effect waves-light btn blue"><i class="material-icons right">print</i>Word</a>
+                </div>
+                <div class="input-field col s2">
+                  <a href="pdf/bien.php" target="_blank" class="waves-effect waves-light btn black"><i class="material-icons right">print</i>Pdf</a>
+                </div>        
+         </div>
             </div>
             <div class="row">
               <!-- tabla de activos -->
@@ -58,7 +66,7 @@
                           </td>    
                           <td><?php echo mb_strtoupper($r->idusuariocustodio,'UTF-8'); ?></td>
                           <td><?php echo mb_strtoupper($r->idubicacion,'UTF-8'); ?></td>
-                          <td style="text-align:right;"><?php echo mb_strtoupper($r->costobien,'UTF-8'); ?></td>
+                          <td style="text-align:right;"><?php echo '$',mb_strtoupper($r->costobien,'UTF-8'); ?></td>
                           <td><?php echo mb_strtoupper($r->idfuentefinanciamiento,'UTF-8'); ?></td>
                           <td><?php echo mb_strtoupper($r->observaciones,'UTF-8'); ?>
                       </td>
@@ -75,10 +83,8 @@
                           <td class="center">
                               <!-- en la url pasamos parámetros para el controlador -->
                               <!--    controller, metod,id -->
-                              <a href="pdf/bien.php"target="_blank" title="Ver detalles e Imprimir en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
-                              <a href="NuevoExcel/bien_excel.php" title="Imprimir en Excel" ><i class="small material-icons green-text">print</i></a><br>
-                              <a href="word/word.php" title="Imprimir en Word" ><i class="small material-icons blue-text">print</i></a><br>
-                          </td>
+                              <a href="pdf/bien.php"target="_blank" title="Ver detalles en Pdf" ><i class="small material-icons black-text">archive</i></a><br>
+                             </td>
                       </tr>
                   <?php endforeach; ?>
                   </tbody>
